@@ -17,6 +17,6 @@ const channels = new Channels({
 module.exports = (req, res) => {
     const data = req.body
     channels.trigger('event-channel', 'event-name', data, () => {
-        res.status(200).end('sent event successfully')
+        return res.status(200).end('sent event successfully')
     })
 }
