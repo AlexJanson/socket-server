@@ -29,7 +29,7 @@ const channels = new Channels({
     cluster
 })
 
-export default async (req, res) => {
+export default async function handler(req, res) {
     const data = req.body
     await channels.trigger('event-channel', 'event-name', data)
     return res.status(200).end('sent event successfully')
