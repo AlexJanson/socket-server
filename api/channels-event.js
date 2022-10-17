@@ -7,8 +7,6 @@ const {
     CLUSTER: cluster,
 } = process.env
 
-key = ""
-
 const channels = new Channels({
     appId,
     key,
