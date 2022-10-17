@@ -7,14 +7,14 @@ const {
     CLUSTER: cluster,
 } = process.env
 
+key = ""
+
 const channels = new Channels({
     appId,
     key,
     secret,
     cluster
 })
-
-console.log(key)
 
 module.exports = (req, res) => {
     const data = req.body
