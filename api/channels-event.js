@@ -14,6 +14,8 @@ const channels = new Channels({
     cluster
 })
 
+console.log(key)
+
 module.exports = (req, res) => {
     const data = req.body
     channels.trigger('event-channel', 'event-name', data, () => {
