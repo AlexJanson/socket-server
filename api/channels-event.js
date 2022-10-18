@@ -30,8 +30,11 @@ const channels = new Channels({
 })
 
 export default async function handler(req, res) {
-    const data = req.body
-    await channels.trigger('event-channel', 'event-name', data)
+    const socketId = req.body.socket_id
+    const message = req.body.message
+    await channels.trigger('event-channel', 'event-name', message, {
+        socketId
+    })
     return res.status(200).end('sent event successfully')
 }
 
