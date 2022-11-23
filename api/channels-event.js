@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     const socketId = req.body.socket_id
     const message = req.body.message
     const chatId = req.body.chat_id
-    await channels.trigger(chatId, 'message', message, {
+    await channels.trigger(chatId + "", 'message', message, {
         socket_id: socketId
     })
     return res.status(200).end('sent event successfully')
